@@ -6,9 +6,9 @@ library(readr)
 # generating file path to the census data
 filename <- fs::path_package("extdata", "census_2021.csv", package="rbioinfcookbook")
 
-col_names = c("area_code", "country", "region", "area_name", "all_persons", "ages_under_4",
-              paste0("ages_", seq(5, 85, by=5), "_to_", seq(9, 89, by=5)), 
-              "ages_over_90")
+col_names = c("area_code", "country", "region", "area_name", "all_persons", "under_4",
+              paste0(seq(5, 85, by=5), "_to_", seq(9, 89, by=5)), 
+              "over_90")
 
 # setting data types to columns of interest, defaulting other columns to numeric type
 col_types = cols(
